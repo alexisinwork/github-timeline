@@ -7,7 +7,7 @@ function App() {
     const repos = await fetch(
       "https://api.github.com/users/alexisinwork/repos"
     );
-    console.log(users);
+    console.log(users, repos);
   };
 
   fetchGithubData();
