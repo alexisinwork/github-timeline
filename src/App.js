@@ -1,7 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const fetchGithubData = async () => {
+    const users = await fetch("https://api.github.com/users/alexisinwork");
+    const repos = await fetch(
+      "https://api.github.com/users/alexisinwork/repos"
+    );
+    console.log(users, repos);
+  };
+
+  fetchGithubData();
+
   return (
     <div className="App">
       <header className="App-header">
