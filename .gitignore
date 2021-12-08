@@ -2,6 +2,7 @@
 node_modules
 scripts/flow/*/.flowconfig
 .flowconfig
+jsconfig.json
 *~
 *.pyc
 .grunt
