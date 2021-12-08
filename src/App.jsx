@@ -1,9 +1,9 @@
 import React from "react";
-import Repo from "components/Repo";
 
 import introStyles from "./styles/intro.module.css";
 import timelineStyles from "./styles/timeline.module.css";
 import footerStyles from "./styles/footer.module.css";
+import Repo from "./components/Repo";
 
 const App = () => {
   // const fetchGithubData = async () => {

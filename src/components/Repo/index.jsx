@@ -1,5 +1,5 @@
 import React from "react";
-import useVisibility from "utils/useVisibility";
+import useVisibility from "../../utils/useVisibility";
 
 import timelineStyles from "../../styles/timeline.module.css";
 
