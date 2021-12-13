@@ -5,6 +5,11 @@ import timelineStyles from "../../styles/timeline.module.css";
 
 const Repo = (props) => {
   const [isVisible, currentElement] = useVisibility(100);
+  const dateTimeFormat = new Intl.DateTimeFormat("en", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <li
@@ -12,8 +17,10 @@ const Repo = (props) => {
       className={isVisible ? timelineStyles["in-view"] : ""}
     >
       <div>
-        <time>{props.time}</time>
-        {props.text}
+        <time>{dateTimeFormat.format(props.created_at)}</time>
+        <a href={props.html_url} target="_blank" rel="noreferrer">
+          {props.name}
+        </a>
       </div>
     </li>
   );
