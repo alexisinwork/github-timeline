@@ -20,9 +20,17 @@ export default function useVisibility(offset = 0, throttleMilliseconds = 100) {
     setIsVisible(top + offset >= 0 && top - offset <= window.innerHeight);
   }, throttleMilliseconds);
 
+  // This will set to visible all elements in the viewPort
   useEffect(() => {
-    document.addEventListener("scroll", onScroll, true);
-    return () => document.removeEventListener("scroll", onScroll, true);
+    onScroll();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) {
+      document.addEventListener("scroll", onScroll, true);
+      return () => document.removeEventListener("scroll", onScroll, true);
+    }
   });
 
   return [isVisible, currentElement];

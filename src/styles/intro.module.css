@@ -1,3 +1,16 @@
+:root {
+  --input-border: #8b8a8b;
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .intro {
   background: #f45b69;
   padding: 100px 0;
@@ -12,4 +25,63 @@
 
 h1 {
   font-size: 2.5rem;
+}
+
+.searchContainer {
+  margin: 25px auto;
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+
+  width: 300px;
+}
+
+.search {
+  padding: 0.25em 0.5em;
+  background-color: #fff;
+  border: none;
+  width: calc(55%-16px);
+  border-radius: 4px;
+  line-height: 1;
+  height: 2.25rem;
+  transition: 180ms box-shadow ease-in-out;
+  margin-right: 16px;
+}
+
+.search:focus {
+  border-color: hsl(
+    var(--input-focus-h),
+    var(--input-focus-s),
+    var(--input-focus-l)
+  );
+  box-shadow: 0 0 0 3px
+    hsla(
+      var(--input-focus-h),
+      var(--input-focus-s),
+      calc(var(--input-focus-l) + 40%),
+      0.8
+    );
+  outline: 3px solid transparent;
+}
+
+.button {
+  width: calc(22.5%-8px);
+  height: 2.25rem;
+  padding: 0.25em 0.5em;
+  line-height: 1px;
+  border-radius: 8px;
+  border: 0;
+  margin-right: 8px;
+}
+
+.button:hover {
+  border: 1px solid green;
+}
+
+.searchBtn {
+  background-color: lightgoldenrodyellow;
+}
+
+.resetBtn {
+  background-color: lightskyblue;
 }
